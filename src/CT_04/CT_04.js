@@ -67,3 +67,7 @@ exports.getGradeWithTest = (grade, testResult) => {
         return 'F'
     }
 };
+
+exports.getGradeWithAverage = (grade1, grade2, testResult) => {
+
+};

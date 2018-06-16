@@ -1,5 +1,5 @@
 const should = require('should');
-const { evenSummation, drawStar } = require('../../src/CT_05/CT_05');
+const { evenSummation, drawStar, drawTriangle } = require('../../src/CT_05/CT_05');
 
 describe('CT_05_for', () => {
     describe('evenSummation', () => {
@@ -62,6 +62,43 @@ describe('CT_05_for', () => {
             const n = 1;
 
             drawStar(n);
+            should.ok(true);
+        });
+    });
+
+    describe('drawTriangle', () => {
+        it('n = 0', () => {
+           const n = 0;
+
+           drawTriangle(n);
+           should.ok(true);
+        });
+
+        it('n = 10', () => {
+            const n = 0;
+
+            drawTriangle(n);
+            should.ok(true);
+        });
+
+        it('n = 1', () => {
+            const n = 0;
+
+            drawTriangle(n);
+            should.ok(true);
+        });
+
+        it('n = 6', () => {
+            const n = 0;
+
+            drawTriangle(n);
+            should.ok(true);
+        });
+
+        it('n = 9', () => {
+            const n = 0;
+
+            drawTriangle(n);
             should.ok(true);
         });
     })
