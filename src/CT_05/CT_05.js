@@ -14,7 +14,7 @@ exports.evenSummation = (N1, N2) => {
             value =+ arr[i];
         }
     }
-    console.log(value);
+    return value;
 };
 
 exports.drawStar = (n) => {

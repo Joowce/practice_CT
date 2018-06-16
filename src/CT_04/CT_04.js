@@ -5,12 +5,12 @@ exports.solveEquation = (a, b, c) => {
         D = Math.sqrt(D);
         const root1 = (-b + D) / 2 * a;
         const root2 = (-b - D) / 2 * a;
-        console.log(root1, root2);
+        return [root1, root2];
     } else if (D === 0) {
         const result = -b / 2 * a;
-        console.log("중근 =" + result);
+        return "중근 =" + result;
     } else {
-        console.log("근이 없음 = " + 'NULL');
+        return "근이 없음 = " + 'NULL';
     }
     // 9p. 이차방정식 근 제대로 구하기
     // 함수 solveEquation
@@ -30,15 +30,15 @@ exports.getGrade = (grade) => {
     // (grade) => 학점
     // 출력 : (string) ex) ‘A’, ’B’, …
     if (grade > 90) {
-        console.log('A')
+        return 'A'
     } else if (grade > 80 && grade < 89) {
-        console.log('B')
+        return 'B'
     } else if (grade > 70 && grade < 79) {
-        console.log('C')
+        return 'C'
     } else if (grade > 60 && grade < 69) {
-        console.log('D')
-    } else if (grade > 59) {
-        console.log('F')
+        return 'D'
+    } else if (grade < 59) {
+        return 'F'
     }
 };
 
@@ -47,23 +47,23 @@ exports.getGradeWithTest = (grade, testResult) => {
     // (grade, testResult) => 학점
     // grade : String
     // testResult : true/false
-    if (grade > 90 && testResult === true) {
-        console.log('A')
+    if (grade > 90 && testResult === true ) {
+        return 'A'
     } else if (grade > 90 && testResult === false) {
-        console.log('B')
+        return 'B'
     } else if (grade > 80 && grade < 89 && testResult === true) {
-        console.log('B')
+        return 'B'
     } else if (grade > 80 && grade < 89 && testResult === false) {
-        console.log('C')
+        return 'C'
     } else if (grade > 70 && grade < 79 && testResult === true) {
-        console.log('C')
+        return 'C'
     } else if (grade > 70 && grade < 79 && testResult === false) {
-        console.log('D')
+        return 'D'
     } else if (grade > 60 && grade < 69 && testResult === true) {
-        console.log('D')
+        return 'D'
     } else if (grade > 60 && grade < 69 && testResult === false) {
-        console.log('F')
-    }else if (grade > 59) {
-        console.log('F')
+        return 'F'
+    }else if (grade < 59) {
+        return 'F'
     }
 };
