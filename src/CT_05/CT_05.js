@@ -38,3 +38,7 @@ exports.drawStar = (n) => {
     //     } console.log("/n")
     // }
 };
+
+exports.drawTriangle = (n) => {
+
+};

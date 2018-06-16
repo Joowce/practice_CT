@@ -1,5 +1,5 @@
 const should = require('should');
-const { solveEquation, getGrade, getGradeWithTest } = require('../../src/CT_04/CT_04');
+const { solveEquation, getGrade, getGradeWithTest, getGradeWithAverage } = require('../../src/CT_04/CT_04');
 
 describe('CT_04_if', () => {
     describe('Solve Equation', () => {
@@ -117,6 +117,54 @@ describe('CT_04_if', () => {
             const expected = 'B';
 
             should.equal(getGradeWithTest(grade, testResult), expected);
+        });
+    });
+
+
+    describe('gradeWithAverage', () => {
+        it('98 95 P: \'A+\'', () => {
+            const grade1 = 98;
+            const grade2 = 95;
+            const testResult = true;
+            const expected = 'A+';
+
+            should.deepEqual(getGradeWithAverage(grade1, grade2, testResult), expected);
+        });
+
+        it('69 81 P: \'C+\'', () => {
+            const grade1 = 69;
+            const grade2 = 81;
+            const testResult = true;
+            const expected = 'C+';
+
+            should.deepEqual(getGradeWithAverage(grade1, grade2, testResult), expected);
+        });
+
+        it('80 89 F: \'C0\'', () => {
+            const grade1 = 80;
+            const grade2 = 89;
+            const testResult = true;
+            const expected = 'C0';
+
+            should.deepEqual(getGradeWithAverage(grade1, grade2, testResult), expected);
+        });
+
+        it('59 70 P: \'D-\'', () => {
+            const grade1 = 59;
+            const grade2 = 70;
+            const testResult = true;
+            const expected = 'D-';
+
+            should.deepEqual(getGradeWithAverage(grade1, grade2, testResult), expected);
+        });
+
+        it('59 69 F: \'F\'', () => {
+            const grade1 = 98;
+            const grade2 = 95;
+            const testResult = true;
+            const expected = 'F';
+
+            should.deepEqual(getGradeWithAverage(grade1, grade2, testResult), expected);
         });
     });
 });
