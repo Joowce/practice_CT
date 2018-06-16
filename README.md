@@ -1,4 +1,4 @@
-#JavaScript 문법 및 코딩연습
+# JavaScript 문법 및 코딩연습
 
 ## clone 후에
 git clone 후에
