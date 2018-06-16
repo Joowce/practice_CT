@@ -1,22 +1,27 @@
 
 exports.solveEquation = (a, b, c) => {
-    let D = (Math.pow(b,2)) - 4 * a * c;
+    let D = (Math.pow(b, 2)) - 4 * a * c;
     if (D > 0) {
         D = Math.sqrt(D);
         const root1 = (-b + D) / 2 * a;
         const root2 = (-b - D) / 2 * a;
-        return [root1, root2];
+        return [root2, root1];
     } else if (D === 0) {
-        const result = -b / 2 * a;
-        return "중근 =" + result;
+        const output = -b / 2 * a;
+        return [output];
     } else {
-        return "근이 없음 = " + 'NULL';
+        return null;
     }
     // 9p. 이차방정식 근 제대로 구하기
-    // 함수 solveEquation
-    // (a,b,c) => 두근이 존재하면 [작은근, 큰근]
-    // 근이 하나이면 [중근]
-    // 없으면 null
+    // 함수 solveEquation (a,b,c)
+    // 두근이 존재하면
+    // => [작은근, 큰근]
+    // 근이 하나이면
+    // => [중근]
+    // => a=1, b= -2, c= 1 이면 1로 나오고,
+    // => a=1, b= 2, c= 1 이면 -1 나옴. 테스트케이스 확인필요
+    // 없으면
+    // => null
 
 
 
@@ -47,23 +52,25 @@ exports.getGradeWithTest = (grade, testResult) => {
     // (grade, testResult) => 학점
     // grade : String
     // testResult : true/false
-    if (grade > 90 && testResult === true ) {
+    // 테스트 케이스가 잘못됨.
+    // 100 F : B, 75 F : D 결과 맞는데 자꾸 오류나오네요...
+    if (grade >= 90 && testResult === true ) {
         return 'A'
-    } else if (grade > 90 && testResult === false) {
+    } else if (grade >= 90 && testResult === false) {
         return 'B'
-    } else if (grade > 80 && grade < 89 && testResult === true) {
+    } else if (grade >= 80 && grade < 90 && testResult === true) {
         return 'B'
-    } else if (grade > 80 && grade < 89 && testResult === false) {
+    } else if (grade >= 80 && grade < 90 && testResult === false) {
         return 'C'
-    } else if (grade > 70 && grade < 79 && testResult === true) {
+    } else if (grade >= 70 && grade < 80 && testResult === true) {
         return 'C'
-    } else if (grade > 70 && grade < 79 && testResult === false) {
+    } else if (grade >= 70 && grade < 80 && testResult === false) {
         return 'D'
-    } else if (grade > 60 && grade < 69 && testResult === true) {
+    } else if (grade >= 60 && grade < 70 && testResult === true) {
         return 'D'
-    } else if (grade > 60 && grade < 69 && testResult === false) {
+    } else if (grade >= 60 && grade < 70 && testResult === false) {
         return 'F'
-    }else if (grade < 59) {
+    } else if (grade < 60 && (testResult === true || testResult === false)) {
         return 'F'
     }
 };
