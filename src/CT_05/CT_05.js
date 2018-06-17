@@ -31,7 +31,7 @@ exports.drawStar = (n) => {
         }
         console.log('/n');
     }
-    //반대로 찍기
+    // 반대로 찍기
     // for (let i = 1; i <= n; i++) {
     //     for (let j = n; j >= i; j--) {
     //         console.log('*')
@@ -40,5 +40,48 @@ exports.drawStar = (n) => {
 };
 
 exports.drawTriangle = (n) => {
-
-};
+    // if ( n % 2 === 0 ) {
+    //     for (let i = 1; i <= n; i++) {
+    //         for (let j = 0; j < i; j++) {
+    //             console.log('*');
+    //         }
+    //         console.log('/n');
+    //     }
+    // } else {
+    //     for (let i = 1; i <= n-1; i++) {
+    //         for (let j = 0; j < i; j++) {
+    //             console.log('*');
+    //         }
+    //         console.log('/n');
+    //     }
+    // }
+    //범위 내
+    if (n <= 10 || n > 0) {
+        if ( n % 2 === 0 ) {
+            for (let i = 1; i <= 10; i++) {
+                if (i <= n) {
+                    for (let j = 1; j <= i; j++) {
+                        console.log('*');
+                    } console.log('/n');
+                } else if (i > n) {
+                    for (let j = 1; j <= 10 - i; j++) {
+                        console.log('*');
+                    } console.log('/n');
+                }
+            }
+        } else {
+            for (let i = 0; i < 10-1; i++) {
+                if (i <= n) {
+                    for (let j = 0; j <= i; j++) {
+                        console.log('*');
+                    } console.log('/n');
+                } else if (i > n) {
+                    for (let j = 1; j <= 10-1 - i; j++) {
+                        console.log('*');
+                    } console.log('/n');
+                }
+            }
+        }
+    } else {
+        return error;
+    }};
