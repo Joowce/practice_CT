@@ -1,4 +1,4 @@
-#CT04_L실습_if
+# CT04_L실습_if
 
 ## 9p. 이차방정식 근 제대로 구하기
 
@@ -26,7 +26,7 @@
     testResult: true/false
 ```
 
-##CT-04 추가문제
+## CT-04 추가문제
 
 #### 함수 getGrageWithAverage
 

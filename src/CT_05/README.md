@@ -1,4 +1,4 @@
-#CT05_L실습_for
+# CT05_L실습_for
 
 >range함수 무시할 것
 
