@@ -89,7 +89,7 @@ describe('CT_04_if', () => {
 
         it('75 F : \'D\'', () => {
             const grade = 75;
-            const testResult = true;
+            const testResult = false;
             const expected = 'D';
 
             should.equal(getGradeWithTest(grade, testResult), expected);
@@ -143,7 +143,7 @@ describe('CT_04_if', () => {
         it('80 89 F: \'C0\'', () => {
             const grade1 = 80;
             const grade2 = 89;
-            const testResult = true;
+            const testResult = false;
             const expected = 'C0';
 
             should.deepEqual(getGradeWithAverage(grade1, grade2, testResult), expected);
@@ -161,7 +161,7 @@ describe('CT_04_if', () => {
         it('59 69 F: \'F\'', () => {
             const grade1 = 59;
             const grade2 = 69;
-            const testResult = true;
+            const testResult = false;
             const expected = 'F';
 
             should.deepEqual(getGradeWithAverage(grade1, grade2, testResult), expected);

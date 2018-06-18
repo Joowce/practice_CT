@@ -77,82 +77,83 @@ exports.getGradeWithTest = (grade, testResult) => {
 
 exports.getGradeWithAverage = (grade1, grade2, testResult) => {
     const M = (grade1 + grade2) / 2;
+    const checkBothAbove = (grade, P1, P2) => {
+        return P1 >= grade && P2 >= grade;
+    };
 
     if (M >= 95) {
         return 'A+'
-    } else if (M >= 90 && grade1 >= 90 && grade2 >= 90 ) {
-        return 'A0'
-    } else if (M >= 90 && grade1 > 90 || grade2 > 90 ) {
-        return 'A-'
-    } else if (M >= 85) {
+    } else if (M >= 90 && testResult) {
+        return checkBothAbove(90, grade1, grade2) ? 'A0' : 'A-';
+    } else if (M >= 85 && testResult) {
         return 'B+'
-    } else if (M >= 80 && grade1 >= 80 && grade2 >= 80 ) {
+    } else if (M >= 80 && (grade1 >= 80 && grade2 >= 80) && testResult) {
         return 'B0'
-    } else if (M >= 80 && grade1 > 80 || grade2 > 80 ) {
+    } else if (M >= 80 && (grade1 > 80 || grade2 > 80) && testResult) {
         return 'B-'
-    } else if (M >= 75) {
+    } else if (M >= 75 && testResult) {
         return 'C+'
-    } else if (M >= 70 && grade1 >= 70 && grade2 >= 70 ) {
+    } else if (M >= 70 && (grade1 >= 70 && grade2 >= 70) && testResult) {
         return 'C0'
-    } else if (M >= 70 && grade1 > 70 || grade2 > 70 ) {
+    } else if (M >= 70 && (grade1 > 70 || grade2 > 70) && testResult) {
         return 'C-'
-    } else if (M >= 65) {
+    } else if (M >= 65 && testResult) {
         return 'D+'
-    } else if (M >= 60 && grade1 >= 60 && grade2 >= 60 ) {
+    } else if (M >= 60 && (grade1 >= 60 && grade2 >= 60) && testResult) {
         return 'D0'
-    } else if (M >= 60 && grade1 > 60 || grade2 > 60 ) {
+    } else if (M >= 60 && (grade1 > 60 || grade2 > 60) && testResult) {
         return 'D-'
     } else if (M < 60 && (testResult === true || testResult === false)){
         return 'F'
-    } else if (M < 60){
+    } else if (M < 60 && testResult){
         return 'F'
     } else if (M >= 95 && testResult === true) {
         return 'A+'
-    } else if (M >= 90 && grade1 >= 90 && grade2 >= 90 && testResult === true) {
+    } else if (M >= 90 && (grade1 >= 90 && grade2 >= 90) && testResult === true) {
         return 'A0'
-    } else if (M >= 90 && grade1 > 90 || grade2 > 90 && testResult === true) {
+    } else if (M >= 90 && (grade1 > 90 || grade2 > 90) && testResult === true) {
         return 'A-'
     } else if (M >= 85 && testResult === true) {
         return 'B+'
-    } else if (M >= 80 && grade1 >= 80 && grade2 >= 80 && testResult === true) {
+    } else if (M >= 80 && (grade1 >= 80 && grade2 >= 80)&& testResult === true) {
         return 'B0'
-    } else if (M >= 80 && grade1 > 80 || grade2 > 80 && testResult === true) {
+    } else if (M >= 80 && (grade1 > 80 || grade2 > 80)&& testResult === true) {
         return 'B-'
     } else if (M >= 75 && testResult === true) {
         return 'C+'
-    } else if (M >= 70 && grade1 >= 70 && grade2 >= 70 && testResult === true) {
+    } else if (M >= 70 && (grade1 >= 70 && grade2 >= 70) && testResult === true) {
         return 'C0'
-    } else if (M >= 70 && grade1 > 70 || grade2 > 70 && testResult === true) {
+    } else if (M >= 70 && (grade1 > 70 || grade2 > 70) && testResult === true) {
         return 'C-'
     } else if (M >= 65 && testResult === true) {
         return 'D+'
-    } else if (M >= 60 && grade1 >= 60 && grade2 >= 60 && testResult === true) {
+    } else if (M >= 60 && (grade1 >= 60 && grade2 >= 60) && testResult === true) {
         return 'D0'
-    } else if (M >= 60 && grade1 > 60 || grade2 > 60 && testResult === true) {
+    } else if (M >= 60 && (grade1 > 60 || grade2 > 60) && testResult === true) {
         return 'D-'
     } else if (M >= 95 && testResult === false) {
         return 'B+'
-    } else if (M >= 90 && grade1 >= 90 && grade2 >= 90 && testResult === false) {
+    } else if (M >= 90 && (grade1 >= 90 && grade2 >= 90) && testResult === false) {
         return 'B0'
-    } else if (M >= 90 && grade1 > 90 || grade2 > 90 && testResult === false) {
+    } else if (M >= 90 && (grade1 > 90 || grade2 > 90) && testResult === false) {
         return 'B-'
     } else if (M >= 85 && testResult === false) {
         return 'C+'
-    } else if (M >= 80 && grade1 >= 80 && grade2 >= 80 && testResult === false) {
+    } else if (M >= 80 && (grade1 >= 80 && grade2 >= 80) && testResult === false) {
         return 'C0'
-    } else if (M >= 80 && grade1 > 80 || grade2 > 80 && testResult === false) {
+    } else if (M >= 80 && (grade1 > 80 || grade2 > 80) && testResult === false) {
         return 'C-'
     } else if (M >= 75 && testResult === false) {
         return 'D+'
-    } else if (M >= 70 && grade1 >= 70 && grade2 >= 70 && testResult === false) {
+    } else if (M >= 70 && (grade1 >= 70 && grade2 >= 70) && testResult === false) {
         return 'D0'
-    } else if (M >= 70 && grade1 > 70 || grade2 > 70 && testResult === false) {
+    } else if (M >= 70 && (grade1 > 70 || grade2 > 70 )&& testResult === false) {
         return 'D-'
     } else if (M >= 65 && testResult === false) {
         return 'F'
-    } else if (M >= 60 && grade1 >= 60 && grade2 >= 60 && testResult === false) {
+    } else if (M >= 60 && (grade1 >= 60 && grade2 >= 60) && testResult === false) {
         return 'F'
-    } else if (M >= 60 && grade1 > 60 || grade2 > 60 && testResult === false) {
+    } else if (M >= 60 && (grade1 > 60 || grade2 > 60) && testResult === false) {
         return 'F'
     }
 };

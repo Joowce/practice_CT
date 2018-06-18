@@ -44,6 +44,49 @@ exports.drawStar = (n) => {
 };
 
 exports.drawTriangle = (n) => {
+
+    if (n <= 10 || n > 0){
+        if (n % 2 === 0) {
+            for (let i = 1; i <= n; i++) {
+                let str = "";
+                for (let j = 0; j < i; j++) {
+                    str += (j+1);
+                }
+                console.log(str)
+            }
+            for (let i = 1; i <= n; i++) {
+                let str = "";
+                for (let j = n; j >= i; j--) {
+                    str += (n - j + 1);
+                }
+                console.log(str)
+            }
+        } else {
+            for (let i = 1; i <= n; i++) {
+                let str = "";
+                let result = 0;
+                for (let j = 0; j < i; j++) {
+                    result += 1;
+                    str += result;
+                }
+                console.log(str)
+            }
+            for (let i = 1; i <= n - 1; i++) {
+                let str = "";
+                let result = 0;
+                for (let j = n - i; j >= 1; j--) {
+                    result += 1;
+                    str += result;
+                }
+                console.log(str)
+            }
+        }
+    } else {
+        return error;
+    }
+
+
+
     // if ( n % 2 === 0 ) {
     //     for (let i = 1; i <= n; i++) {
     //         for (let j = 0; j < i; j++) {
@@ -59,35 +102,37 @@ exports.drawTriangle = (n) => {
     //         console.log('/n');
     //     }
     // }
-    //범위 내
-    if (n <= 10 || n > 0) {
-        if ( n % 2 === 0 ) {
-            for (let i = 1; i <= 10; i++) {
-                let star = "";
-                if (i <= n) {
-                    for (let j = 1; j <= i; j++) {
-                        star += '*';
-                    } console.log(star)
-                } else if (i > n) {
-                    for (let j = 1; j <= 10 - i; j++) {
-                        star += '*';
-                    } console.log(star)
-                }
-            }
-        } else {
-            for (let i = 0; i < 10-1; i++) {
-                let star = "";
-                if (i <= n) {
-                    for (let j = 0; j <= i; j++) {
-                        star += '*';
-                    } console.log(star)
-                } else if (i > n) {
-                    for (let j = 1; j <= 10-1 - i; j++) {
-                        star += '*';
-                    } console.log(star)
-                }
-            }
-        }
-    } else {
-        return error;
-    }};
+
+    // //범위 내
+    // if (n <= 10 || n > 0) {
+    //     if ( n % 2 === 0 ) {
+    //         for (let i = 1; i <= n; i++) {
+    //             let star = "";
+    //             if (i <= n) {
+    //                 for (let j = 0; j < i; j++) {
+    //                     star += '*';
+    //                 } console.log(star)
+    //             } else if (i > n) {
+    //                 for (let j = 0; ????; j++) {
+    //                     star += '&';
+    //                 } console.log(star)
+    //             } else {}
+    //         }
+    //     } else {
+    //         for (let i = 0; i < 10-1; i++) {
+    //             let star = "";
+    //             if (i <= n) {
+    //                 for (let j = 0; j < i; j++) {
+    //                     star += '*';
+    //                 } console.log(star)
+    //             } else if (i > n) {
+    //                 for (let j = 1; ????; j++) {
+    //                     star += '&';
+    //                 } console.log(star)
+    //             } else {}
+    //         }
+    //     }
+    // } else {
+    //     return error;
+    // }
+};
