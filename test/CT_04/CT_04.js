@@ -16,7 +16,7 @@ describe('CT_04_if', () => {
             const a = 1;
             const b = 2;
             const c = 1;
-            const expected = [1];
+            const expected = [-1];
 
             const result = solveEquation(a, b, c);
             should.deepEqual(result, expected);
@@ -82,7 +82,7 @@ describe('CT_04_if', () => {
         it('100 F : \'B\'', () => {
             const grade = 100;
             const testResult = false;
-            const expected = 'A';
+            const expected = 'B';
 
             should.equal(getGradeWithTest(grade, testResult), expected);
         });
@@ -159,8 +159,8 @@ describe('CT_04_if', () => {
         });
 
         it('59 69 F: \'F\'', () => {
-            const grade1 = 98;
-            const grade2 = 95;
+            const grade1 = 59;
+            const grade2 = 69;
             const testResult = true;
             const expected = 'F';
 

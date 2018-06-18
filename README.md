@@ -1,12 +1,8 @@
 # JavaScript 문법 및 코딩연습
 
 ## clone 후에
-git clone 후에
-```
-git checkout only-problem
-```
-only-problem branch로 이동한 다음에 
-해당 브랜치에서 새로 브랜치를 만들고 시작하세요
+git clone 후에 master 브랜치에는 문제만 있습니다.  
+master 브랜치에서 branch하나 따서 문제를 풀어보세요
 
 #### dependency
 > mocha, should 설치
