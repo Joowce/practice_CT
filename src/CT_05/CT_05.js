@@ -9,11 +9,11 @@ exports.evenSummation = (N1, N2) => {
     let result = 0;
     while (value <= N2) {
         arr.push(value);
-        value =+ 1;
+        value += 1;
     }
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i += 1 ) {
         if (arr[i] % 2 === 0) {
-            result =+ arr[i];
+            result += arr[i];
         } else {}
     }
     return result;
@@ -25,11 +25,15 @@ exports.drawStar = (n) => {
     // (n) => 별
     // 10페이지 참고할것
     // print => console.log 사용하시면 됩니다.
+
     for (let i = 1; i <= n; i++) {
+        let str = '';
         for (let j = 0; j < i; j++) {
-            console.log('*');
+            str += '*';
         }
-        console.log('/n');
+        console.log(str);
+        // console.log('\n');
+        // console.log('/n');
     }
     // 반대로 찍기
     // for (let i = 1; i <= n; i++) {
@@ -59,26 +63,28 @@ exports.drawTriangle = (n) => {
     if (n <= 10 || n > 0) {
         if ( n % 2 === 0 ) {
             for (let i = 1; i <= 10; i++) {
+                let star = "";
                 if (i <= n) {
                     for (let j = 1; j <= i; j++) {
-                        console.log('*');
-                    } console.log('/n');
+                        star += '*';
+                    } console.log(star)
                 } else if (i > n) {
                     for (let j = 1; j <= 10 - i; j++) {
-                        console.log('*');
-                    } console.log('/n');
+                        star += '*';
+                    } console.log(star)
                 }
             }
         } else {
             for (let i = 0; i < 10-1; i++) {
+                let star = "";
                 if (i <= n) {
                     for (let j = 0; j <= i; j++) {
-                        console.log('*');
-                    } console.log('/n');
+                        star += '*';
+                    } console.log(star)
                 } else if (i > n) {
                     for (let j = 1; j <= 10-1 - i; j++) {
-                        console.log('*');
-                    } console.log('/n');
+                        star += '*';
+                    } console.log(star)
                 }
             }
         }

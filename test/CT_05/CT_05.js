@@ -75,28 +75,28 @@ describe('CT_05_for', () => {
         });
 
         it('n = 10', () => {
-            const n = 0;
+            const n = 10;
 
             drawTriangle(n);
             should.ok(true);
         });
 
         it('n = 1', () => {
-            const n = 0;
+            const n = 1;
 
             drawTriangle(n);
             should.ok(true);
         });
 
         it('n = 6', () => {
-            const n = 0;
+            const n = 6;
 
             drawTriangle(n);
             should.ok(true);
         });
 
         it('n = 9', () => {
-            const n = 0;
+            const n = 9;
 
             drawTriangle(n);
             should.ok(true);
