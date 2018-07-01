@@ -22,9 +22,6 @@ exports.solveEquation = (a, b, c) => {
     // => a=1, b= 2, c= 1 이면 -1 나옴. 테스트케이스 확인필요
     // 없으면
     // => null
-
-
-
 };
 
 exports.getGrade = (grade) => {
